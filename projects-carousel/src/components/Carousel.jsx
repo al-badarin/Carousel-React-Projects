@@ -12,5 +12,8 @@ export default function Carousel({
   ariaLabel = 'carousel',
   className = '',
 }) {
-    
+  const [index, setIndex] = useState(0);
+  const x = useMotionValue(0);
+  const containerRef = useRef(null);
+  const cardCount = items.length;
 }
