@@ -52,4 +52,9 @@ export default function Carousel({
       node?.removeEventListener('mouseleave', start);
     };
   }, [autoplay, autoplayMs]);
+
+  function clamp(i) {
+    if (loop) return (i + cardCount) % cardCount;
+    return Math.max(0, Math.min(cardCount - 1, i));
+  }
 }
