@@ -95,4 +95,76 @@ export default function Carousel({
     node.addEventListener('wheel', onWheel, { passive: false });
     return () => node.removeEventListener('wheel', onWheel);
   }, [index]);
+
+  return (
+    <div
+      className={`relative ${className}`}
+      aria-roledescription="carousel"
+      aria-label={ariaLabel}
+    >
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex gap-2" aria-hidden>
+          {items.map((_, i) => (
+            <button
+              key={i}
+              className={`h-2 w-2 rounded-full transition-opacity ${
+                i === index ? 'opacity-100' : 'opacity-40'
+              }`}
+              onClick={() => scrollTo(i)}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
+        <div className="flex gap-2">
+          <button
+            onClick={prev}
+            className="rounded-xl px-3 py-2 bg-white/10 hover:bg-white/20 backdrop-blur border border-white/10"
+            aria-label="Previous"
+          >
+            ◀
+          </button>
+          <button
+            onClick={next}
+            className="rounded-xl px-3 py-2 bg-white/10 hover:bg-white/20 backdrop-blur border border-white/10"
+            aria-label="Next"
+          >
+            ▶
+          </button>
+        </div>
+      </div>
+
+      <div ref={containerRef} className="overflow-hidden">
+        <motion.ul
+          className="flex"
+          style={{ x, gap: `${gap}px`, touchAction: 'pan-y' }}
+          drag="x"
+          dragConstraints={{
+            left: -(totalWidth - (itemWidth + gap)),
+            right: 0,
+          }}
+          dragElastic={0.1}
+          onDragEnd={(e, info) => {
+            // snap based on velocity
+            const direction = info.velocity.x < 0 ? 1 : -1;
+            const delta = Math.round(info.offset.x / (itemWidth + gap));
+            const newIndex = clamp(index - delta + direction);
+            scrollTo(newIndex);
+          }}
+          role="group"
+          aria-roledescription="carousel track"
+        >
+          {items.map((item, i) => (
+            <li
+              key={i}
+              className="shrink-0"
+              style={{ width: itemWidth }}
+              aria-label={`Slide ${i + 1} of ${items.length}`}
+            >
+              {renderItem(item, i)}
+            </li>
+          ))}
+        </motion.ul>
+      </div>
+    </div>
+  );
 }
