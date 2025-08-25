@@ -70,4 +70,29 @@ export default function Carousel({
   function prev() {
     scrollTo(index - 1);
   }
+
+  // Keyboard support
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft') prev();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [index]);
+
+  // Wheel (trackpads)
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+    const onWheel = (e) => {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        e.preventDefault();
+        if (e.deltaX > 0) next();
+        else prev();
+      }
+    };
+    node.addEventListener('wheel', onWheel, { passive: false });
+    return () => node.removeEventListener('wheel', onWheel);
+  }, [index]);
 }
