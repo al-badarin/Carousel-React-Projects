@@ -1,22 +1,15 @@
 import { Routes, Route, Link } from 'react-router-dom';
+import { projects } from './data/projects.js';
+
 import Carousel from './components/Carousel.jsx';
 import ProjectCard from './components/ProjectCard.jsx';
 import ProjectDetail from './components/ProjectDetail.jsx';
-import { projects } from './data/projects.js';
+import Header from './components/Header.jsx';
 
 function App() {
   return (
     <div className="bg-neutral-950 text-neutral-100 min-h-screen">
-      <header className="sticky top-0 z-40 border-b border-neutral-800/80 bg-neutral-950/80 backdrop-blur">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link to="/" className="font-semibold tracking-tight">
-            My Projects
-          </Link>
-          <nav className="text-xs text-neutral-300/70">
-            React • Tailwind • Router
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       <Routes>
         <Route path="/" element={<Home />} />
