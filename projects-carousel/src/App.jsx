@@ -1,6 +1,6 @@
 import { Routes, Route, Link } from 'react-router-dom';
 // import Carousel from './components/Carousel.jsx';
-// import ProjectCard from './components/ProjectCard.jsx';
+import ProjectCard from './components/ProjectCard.jsx';
 import ProjectDetail from './components/ProjectDetail.jsx';
 // import { projects } from './data/projects.js';
 
@@ -28,6 +28,35 @@ function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function Home() {
+  return (
+    <main className="container py-12">
+      <h1 className="text-4xl font-extrabold tracking-tight">
+        Featured Projects
+      </h1>
+      <p className="text-white/70 mt-2">
+        A minimal, reusable carousel you can drop into any site.
+      </p>
+
+      <section className="mt-8">
+        <Carousel
+          items={projects}
+          itemWidth={360}
+          autoplay
+          ariaLabel="Projects gallery"
+          renderItem={(p) => <ProjectCard p={p} />}
+        />
+      </section>
+
+      <section className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((p) => (
+          <ProjectCard key={p.id} p={p} />
+        ))}
+      </section>
+    </main>
   );
 }
 
