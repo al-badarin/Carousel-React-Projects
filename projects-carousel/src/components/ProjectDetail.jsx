@@ -1,8 +1,11 @@
+import Carousel from "./Carousel";
+
 export default function ProjectDetail() {
   const { id } = useParams();
   const nav = useNavigate();
   const p = useMemo(() => projects.find((x) => x.id === id), [id]);
 
+  // guard: unknown id
   if (!p) {
     return (
       <div className="container py-16">
@@ -19,6 +22,7 @@ export default function ProjectDetail() {
 
   return (
     <div className="container py-10">
+      {/* Back Button */}
       <button
         onClick={() => nav(-1)}
         className="mb-6 px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10"
@@ -28,6 +32,7 @@ export default function ProjectDetail() {
       </button>
 
       <div className="grid md:grid-cols-2 gap-8 items-start">
+        {/* Hero + Meta */}
         <img
           src={p.thumb}
           alt={`${p.title} hero`}
@@ -36,6 +41,8 @@ export default function ProjectDetail() {
         <div>
           <h1 className="text-3xl font-bold">{p.title}</h1>
           {p.subtitle && <p className="text-white/70 mt-1">{p.subtitle}</p>}
+
+          {/* Tech Chips */}
           <div className="mt-4 flex flex-wrap gap-2">
             {p.tech.map((t) => (
               <span
@@ -46,6 +53,8 @@ export default function ProjectDetail() {
               </span>
             ))}
           </div>
+
+          {/* Description + Highlights */}
           <p className="mt-6 text-white/90 leading-relaxed">{p.description}</p>
           {p.highlights?.length > 0 && (
             <ul className="mt-4 list-disc list-inside text-white/80 space-y-1">
@@ -54,6 +63,8 @@ export default function ProjectDetail() {
               ))}
             </ul>
           )}
+
+          {/* primary actions */}
           <div className="mt-6 flex gap-3">
             <a
               className="rounded-xl px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10"
@@ -75,6 +86,7 @@ export default function ProjectDetail() {
         </div>
       </div>
 
+      {/* screenshots carousel (conditional) */}
       {p.images?.length > 1 && (
         <section className="mt-12">
           <h2 className="text-xl font-semibold mb-4">Screenshots</h2>
