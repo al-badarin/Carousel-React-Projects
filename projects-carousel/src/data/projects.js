@@ -10,10 +10,10 @@ export const projects = [
       'https://github.com/al-badarin/React-Projects/tree/main/01-React-Essentials-starting-project',
     liveUrl: 'https://react-essentials-albadarin.netlify.app/',
     images: [
-      '/images/react-essentials-1.jpg',
-      '/images/react-essentials-2.jpg',
+      '/images/react-essentials-1.png',
+      //   '/images/react-essentials-2.png',
     ],
-    thumb: '/images/react-essentials-1.jpg',
+    thumb: '/images/react-essentials-1.png',
     highlights: [
       'Stateful components & props drilling',
       'Conditional rendering & lists',
@@ -30,8 +30,11 @@ export const projects = [
     repoUrl:
       'https://github.com/al-badarin/React-Projects/tree/main/02-Tic-Tac-Toe-game-project',
     liveUrl: 'https://tic-tac-toe-albadarin.netlify.app/',
-    images: ['/images/tic-tac-toe-1.jpg', '/images/tic-tac-toe-2.jpg'],
-    thumb: '/images/tic-tac-toe-1.jpg',
+    images: [
+      '/images/tic-tac-toe-1.png',
+      // '/images/tic-tac-toe-2.png'
+    ],
+    thumb: '/images/tic-tac-toe-1.png',
     highlights: [
       'Win/draw detection & reset',
       'Scoreboard with persistence',
@@ -48,8 +51,11 @@ export const projects = [
     repoUrl:
       'https://github.com/al-badarin/React-Projects/tree/main/03-Investment-Calculator',
     liveUrl: 'https://investment-calculator-albadarin.netlify.app/',
-    images: ['/images/investment-1.jpg', '/images/investment-2.jpg'],
-    thumb: '/images/investment-1.jpg',
+    images: [
+      '/images/investment-1.png',
+      // '/images/investment-2.png'
+    ],
+    thumb: '/images/investment-1.png',
     highlights: [
       'Yearly table output',
       'Form validation & UX',
@@ -66,8 +72,11 @@ export const projects = [
     repoUrl:
       'https://github.com/al-badarin/React-Projects/tree/main/04-Countdown-Game',
     liveUrl: 'https://countdown-game-albadarin.netlify.app/',
-    images: ['/images/countdown-1.jpg', '/images/countdown-2.jpg'],
-    thumb: '/images/countdown-1.jpg',
+    images: [
+      '/images/countdown-1.png',
+      // '/images/countdown-2.png'
+    ],
+    thumb: '/images/countdown-1.png',
     highlights: [
       'Accurate interval timing',
       'Responsive controls',
@@ -84,8 +93,8 @@ export const projects = [
     repoUrl:
       'https://github.com/al-badarin/React-Projects/tree/main/05-project-management-app',
     liveUrl: 'https://project-manager-app-albadarin.netlify.app/',
-    images: ['/images/pm-1.jpg', '/images/pm-2.jpg'],
-    thumb: '/images/pm-1.jpg',
+    images: ['/images/pm-1.png', '/images/pm-2.png'],
+    thumb: '/images/pm-1.png',
     highlights: [
       'Project & task relations',
       'Modal-based forms',

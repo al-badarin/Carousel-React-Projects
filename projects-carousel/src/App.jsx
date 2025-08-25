@@ -24,7 +24,7 @@ function App() {
 
       <footer className="mt-16 border-t border-white/10">
         <div className="container py-8 text-sm text-white/60">
-          © {new Date().getFullYear()} Your Name. Built with React + Tailwind.
+          © {new Date().getFullYear()} Jamal Al Badrin. Built with React + Tailwind.
         </div>
       </footer>
     </div>
