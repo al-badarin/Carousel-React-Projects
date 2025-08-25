@@ -57,4 +57,17 @@ export default function Carousel({
     if (loop) return (i + cardCount) % cardCount;
     return Math.max(0, Math.min(cardCount - 1, i));
   }
+
+  function scrollTo(i) {
+    const target = -i * (itemWidth + gap);
+    animate(x, target, { type: 'spring', stiffness: 260, damping: 30 });
+    setIndex(clamp(i));
+  }
+
+  function next() {
+    scrollTo(index + 1);
+  }
+  function prev() {
+    scrollTo(index - 1);
+  }
 }
