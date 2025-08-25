@@ -1,3 +1,7 @@
+import { useNavigate, useParams } from "react-router-dom";
+import { useMemo } from "react";
+
+import { projects } from '../data/projects.js';
 import Carousel from "./Carousel";
 
 export default function ProjectDetail() {
