@@ -40,9 +40,9 @@ function Home() {
       <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
         Featured React Projects
       </h1>
-      <p className="text-neutral-300 mt-2">
+      {/* <p className="text-neutral-300 mt-2">
         A minimal, reusable carousel you can drop into any site.
-      </p>
+      </p> */}
 
       <section className="mt-8">
         <Carousel

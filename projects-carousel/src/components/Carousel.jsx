@@ -24,28 +24,18 @@ export default function Carousel({
 
   useEffect(() => {
     if (!autoplay) return;
-
-    let controls = setInterval(() => {
-      next();
-    }, Math.max(autoplayMs, 1200));
-
+    let controls = setInterval(() => next(), Math.max(autoplayMs, 1200));
     const node = containerRef.current;
     const stop = () => {
       clearInterval(controls);
       controls = null;
     };
     const start = () => {
-      if (!controls) {
-        controls = setInterval(() => {
-          next();
-        }, Math.max(autoplayMs, 1200));
-      }
+      if (!controls)
+        controls = setInterval(() => next(), Math.max(autoplayMs, 1200));
     };
-
-    // Pause and resume
     node?.addEventListener('mouseenter', stop);
     node?.addEventListener('mouseleave', start);
-
     return () => {
       clearInterval(controls);
       node?.removeEventListener('mouseenter', stop);
@@ -54,16 +44,18 @@ export default function Carousel({
   }, [autoplay, autoplayMs]);
 
   function clamp(i) {
-    if (loop) return (i + cardCount) % cardCount;
-    return Math.max(0, Math.min(cardCount - 1, i));
+    return loop
+      ? (i + cardCount) % cardCount
+      : Math.max(0, Math.min(cardCount - 1, i));
   }
-
   function scrollTo(i) {
-    const target = -i * (itemWidth + gap);
-    animate(x, target, { type: 'spring', stiffness: 260, damping: 30 });
+    animate(x, -i * (itemWidth + gap), {
+      type: 'spring',
+      stiffness: 260,
+      damping: 30,
+    });
     setIndex(clamp(i));
   }
-
   function next() {
     scrollTo(index + 1);
   }
@@ -71,7 +63,6 @@ export default function Carousel({
     scrollTo(index - 1);
   }
 
-  // Keyboard support
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'ArrowRight') next();
@@ -81,15 +72,13 @@ export default function Carousel({
     return () => window.removeEventListener('keydown', onKey);
   }, [index]);
 
-  // Wheel (trackpads)
   useEffect(() => {
     const node = containerRef.current;
     if (!node) return;
     const onWheel = (e) => {
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
         e.preventDefault();
-        if (e.deltaX > 0) next();
-        else prev();
+        e.deltaX > 0 ? next() : prev();
       }
     };
     node.addEventListener('wheel', onWheel, { passive: false });
@@ -102,13 +91,14 @@ export default function Carousel({
       aria-roledescription="carousel"
       aria-label={ariaLabel}
     >
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex gap-2" aria-hidden>
+      {/* Controls */}
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center gap-2" aria-hidden>
           {items.map((_, i) => (
             <button
               key={i}
-              className={`h-2 w-2 rounded-full transition-opacity ${
-                i === index ? 'opacity-100' : 'opacity-40'
+              className={`h-2.5 w-2.5 rounded-full ${
+                i === index ? 'bg-neutral-100' : 'bg-neutral-600/60'
               }`}
               onClick={() => scrollTo(i)}
               aria-label={`Go to slide ${i + 1}`}
@@ -118,14 +108,14 @@ export default function Carousel({
         <div className="flex gap-2">
           <button
             onClick={prev}
-            className="rounded-xl px-3 py-2 bg-white/10 hover:bg-white/20 backdrop-blur border border-white/10"
+            className="h-8 w-8 grid place-items-center rounded-md border border-neutral-700/70 bg-neutral-900 hover:bg-neutral-800"
             aria-label="Previous"
           >
             ◀
           </button>
           <button
             onClick={next}
-            className="rounded-xl px-3 py-2 bg-white/10 hover:bg-white/20 backdrop-blur border border-white/10"
+            className="h-8 w-8 grid place-items-center rounded-md border border-neutral-700/70 bg-neutral-900 hover:bg-neutral-800"
             aria-label="Next"
           >
             ▶
@@ -133,9 +123,10 @@ export default function Carousel({
         </div>
       </div>
 
+      {/* Track */}
       <div ref={containerRef} className="overflow-hidden">
         <motion.ul
-          className="flex"
+          className="flex list-none"
           style={{ x, gap: `${gap}px`, touchAction: 'pan-y' }}
           drag="x"
           dragConstraints={{
@@ -144,11 +135,9 @@ export default function Carousel({
           }}
           dragElastic={0.1}
           onDragEnd={(e, info) => {
-            // snap based on velocity
             const direction = info.velocity.x < 0 ? 1 : -1;
             const delta = Math.round(info.offset.x / (itemWidth + gap));
-            const newIndex = clamp(index - delta + direction);
-            scrollTo(newIndex);
+            scrollTo(clamp(index - delta + direction));
           }}
           role="group"
           aria-roledescription="carousel track"
