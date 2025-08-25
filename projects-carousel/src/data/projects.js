@@ -1,4 +1,5 @@
 export const projects = [
+  // React Essentials
   {
     id: 'react-essentials',
     title: 'React Essentials – Core Concepts',
@@ -20,6 +21,8 @@ export const projects = [
       'Form handling & validation basics',
     ],
   },
+
+  // Tic Tac Toe
   {
     id: 'tic-tac-toe',
     title: 'Tic Tac Toe – Score & Persistence',
@@ -41,6 +44,8 @@ export const projects = [
       'Keyboard-accessible controls',
     ],
   },
+
+  // Investment Calculator
   {
     id: 'investment-calculator',
     title: 'Investment Calculator – Compound Growth',
@@ -62,6 +67,8 @@ export const projects = [
       'Derived state & memoization',
     ],
   },
+
+  // Countdown Game
   {
     id: 'countdown-game',
     title: 'Countdown Game – Reflex Challenge',
@@ -83,6 +90,8 @@ export const projects = [
       'Accessible feedback cues',
     ],
   },
+
+  // Project Management App
   {
     id: 'project-manager-app',
     title: 'Project Management App – Tasks & Projects',
