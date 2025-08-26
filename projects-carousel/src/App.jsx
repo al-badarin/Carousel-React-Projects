@@ -37,6 +37,7 @@ function Home() {
         A minimal, reusable carousel you can drop into any site.
       </p> */}
 
+      {/* Projects Carousel */}
       <section className="mt-8">
         <Carousel
           items={projects}
@@ -47,6 +48,16 @@ function Home() {
         />
       </section>
 
+      {/* Text Section to separate the carousel and projects list */}
+      <section className="mt-12 text-center">
+        <p className="text-lg text-neutral-600">
+          Explore a collection of high-quality, well-documented React projects
+          that showcase the power of modern web development. Each project is
+          designed to be clean, easy to use, and highly customizable.
+        </p>
+      </section>
+
+      {/* Projects List Section */}
       <section className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((p) => (
           <ProjectCard key={p.id} p={p} />
