@@ -47,6 +47,8 @@ export default function ProjectCard({ p }) {
             Code
           </a>
           <a
+            // className="text-center rounded-md px-3 py-2 text-black"
+            // style={{ backgroundColor: '#f8cc27' }}
             className="text-center rounded-md px-3 py-2 bg-indigo-500 hover:bg-indigo-600 text-white"
             href={p.liveUrl}
             target="_blank"
