@@ -8,7 +8,10 @@ import Header from './components/Header.jsx';
 
 function App() {
   return(
-    <Header/>
+      <div className="bg-red-500 text-white">
+      Tailwind is working!
+      <Header/>
+    </div>
   )
 }
 

@@ -1,15 +1,1 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/*
-Accessibility: custom focus ring variable
-*/
-:root {
-  --ring: 0 0 0 3px rgba(59, 130, 246, 0.6);
-}
-:focus-visible {
-  outline: none;
-  box-shadow: var(--ring);
-  border-radius: 0.75rem;
-}
+@import "tailwindcss";
