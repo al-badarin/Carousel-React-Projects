@@ -1,17 +1,28 @@
 export const projects = [
-   // BecomePro Website
+  // BecomePro Website
   {
     id: 'becomepro-website',
     title: 'BecomePro – Football Training Platform',
     subtitle: 'Training, Nutrition, Mental Toughness',
     description:
       'BecomePro is a comprehensive platform for football players, offering resources on training, nutrition, mental toughness, and performance enhancement.',
-    tech: ['React', 'JavaScript', 'Bootstrap', 'CSS3', 'HTML5', 'Node.js', 'Firebase'],
+    tech: [
+      'React',
+      'JavaScript',
+      'Bootstrap',
+      'CSS3',
+      'HTML5',
+      'Node.js',
+      'Firebase',
+    ],
     repoUrl: 'https://github.com/al-badarin/BecomePro',
     liveUrl: 'https://becomepro-2024.web.app',
     images: [
-      '/images/becomepro-1.png', // Add the actual screenshot paths
+      '/images/becomepro-1.png',
       '/images/becomepro-2.png',
+      '/images/becomepro-3.png',
+      '/images/becomepro-4.png',
+      '/images/becomepro-5.png',
     ],
     thumb: '/images/becomepro-1.png',
     highlights: [
@@ -32,8 +43,11 @@ export const projects = [
     repoUrl: 'https://github.com/al-badarin/Grip-Socks-BecomePro-Website',
     liveUrl: 'https://grip-socks-becomepro.web.app',
     images: [
-      '/images/grip-socks-1.png', // Add the actual screenshot paths
+      '/images/grip-socks-1.png',
       '/images/grip-socks-2.png',
+      '/images/grip-socks-3.png',
+      '/images/grip-socks-4.png',
+      '/images/grip-socks-5.png',
     ],
     thumb: '/images/grip-socks-1.png',
     highlights: [
@@ -42,7 +56,7 @@ export const projects = [
       'Customer testimonials and FAQ sections',
     ],
   },
-  
+
   // React Essentials
   {
     id: 'react-essentials',
