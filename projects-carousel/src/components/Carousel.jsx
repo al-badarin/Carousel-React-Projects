@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, useMotionValue, animate } from 'framer-motion';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 
 export default function Carousel({
   items,
@@ -92,33 +93,39 @@ export default function Carousel({
       aria-label={ariaLabel}
     >
       {/* Controls */}
-      <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center gap-2" aria-hidden>
+      <div className="flex items-center justify-between mb-4">
+        {/* Pagination Dots */}
+        <div className="flex items-center gap-3" aria-hidden>
           {items.map((_, i) => (
             <button
               key={i}
-              className={`h-2.5 w-2.5 rounded-full ${
-                i === index ? 'bg-neutral-100' : 'bg-neutral-600/60'
+              className={`h-3 w-3 rounded-full transition-all duration-300 ease-in-out ${
+                i === index
+                  ? 'bg-indigo-500 scale-125' // Active dot with a larger size
+                  : 'bg-neutral-600/60 hover:bg-neutral-400'
               }`}
               onClick={() => scrollTo(i)}
               aria-label={`Go to slide ${i + 1}`}
             />
           ))}
         </div>
-        <div className="flex gap-2">
+
+        {/* Previous and Next Buttons */}
+        {/* Previous and Next Buttons */}
+        <div className="flex gap-3">
           <button
             onClick={prev}
-            className="h-8 w-8 grid place-items-center rounded-md border border-neutral-700/70 bg-neutral-900 hover:bg-neutral-800"
+            className="h-12 w-12 flex items-center justify-center rounded-full border-2 border-neutral-700 bg-neutral-800 text-white hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
             aria-label="Previous"
           >
-            ◀
+            <ChevronLeftIcon className="h-6 w-6" />
           </button>
           <button
             onClick={next}
-            className="h-8 w-8 grid place-items-center rounded-md border border-neutral-700/70 bg-neutral-900 hover:bg-neutral-800"
+            className="h-12 w-12 flex items-center justify-center rounded-full border-2 border-neutral-700 bg-neutral-800 text-white hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
             aria-label="Next"
           >
-            ▶
+            <ChevronRightIcon className="h-6 w-6" />
           </button>
         </div>
       </div>
