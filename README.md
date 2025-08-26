@@ -17,8 +17,9 @@ You can view the live demo of the carousel here:
 
 - ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript) Core logic & interactivity
 - ![React](https://img.shields.io/badge/React-19-blue?logo=react) Library for building UIs
+- ![JSX](https://img.shields.io/badge/JSX-HTML%E2%80%90in%E2%80%90JS-purple) HTML syntax in JS
 - ![Tailwind CSS](https://img.shields.io/badge/Tailwind-Utility%E2%80%91first-teal?logo=tailwindcss) Utility-first CSS framework
-- ⚙️ Tools: Vite, ESLint, Prettier, Git, Netlify deployment
+- ⚙️ Tools: Vite, ESLint, Prettier, Git, Netlify deployment and more...
 
 ---
 
