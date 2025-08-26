@@ -49,11 +49,14 @@ function Home() {
       </section>
 
       {/* Text Section to separate the carousel and projects list */}
-      <section className="mt-12 text-center">
-        <p className="text-lg text-neutral-600">
-          Explore a collection of high-quality, well-documented React projects
-          that showcase the power of modern web development. Each project is
-          designed to be clean, easy to use, and highly customizable.
+      <section className="mt-16 text-center bg-gradient-to-r from-indigo-500 via-purple-600 to-indigo-500 text-white p-8 rounded-lg shadow-lg">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+          A Collection of My React Projects
+        </h2>
+        <p className="text-lg md:text-xl">
+          Here you'll find a few of the React projects I've worked on. These
+          projects are built with clean, reusable code, and are designed to
+          showcase modern web development practices.
         </p>
       </section>
 
