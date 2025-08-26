@@ -17,7 +17,7 @@ export default function Header() {
           </Link>
 
           <ul className="hidden sm:flex items-center gap-2 text-xs">
-            {['React', 'Tailwind', 'Router'].map((t) => (
+            {['React', 'Tailwind', 'JSX'].map((t) => (
               <li key={t}>
                 <span className="inline-flex items-center rounded-full border border-neutral-700/70 bg-neutral-900 px-2.5 py-1 text-neutral-300 hover:text-white">
                   {t}
