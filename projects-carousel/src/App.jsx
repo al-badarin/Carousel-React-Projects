@@ -18,9 +18,8 @@ function App() {
       </Routes>
 
       <footer className="mt-16 border-t border-neutral-800/80">
-        <div className="max-w-6xl mx-auto px-4 py-8 text-sm text-neutral-300/80">
-          © {new Date().getFullYear()} Jamal Al Badrin. Built with React +
-          Tailwind.
+        <div className="max-w-6xl mx-auto px-4 py-8 text-sm text-center text-neutral-300/80">
+          © {new Date().getFullYear()} Jamal Al Badarin. 
         </div>
       </footer>
     </div>
