@@ -168,4 +168,29 @@ export const projects = [
       'Empty/error state UX',
     ],
   },
+
+  // Shopping Cart Store (NEW)
+  {
+    id: 'shopping-cart-store',
+    title: 'Shopping Cart Store – Context & Modal Cart',
+    subtitle: 'Context API, Portals & Derived Totals',
+    description:
+      'A minimal storefront with a global cart using the Context API, a portal-based modal (native <dialog>), quantity controls, and live total calculations from local product data.',
+    tech: ['React', 'Context API', 'Portals', 'Hooks', 'Vite', 'CSS'],
+    repoUrl:
+      'https://github.com/al-badarin/React-Projects/tree/main/06-shopping-cart-store',
+    liveUrl: 'https://boutique-shopping-cart-albadarin.netlify.app/',
+    images: [
+      '/images/cart-1.png',
+      '/images/cart-2.png',
+      '/images/cart-3.png',
+      '/images/cart-4.png',
+    ],
+    thumb: '/images/cart-1.png',
+    highlights: [
+      'Global cart with add/increment/decrement',
+      'Portal modal with native <dialog>',
+      'Live total & quantity badge in header',
+    ],
+  },
 ];
