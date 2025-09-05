@@ -193,4 +193,37 @@ export const projects = [
       'Live total & quantity badge in header',
     ],
   },
+
+  // Place Picker
+  {
+    id: 'place-picker',
+    title: 'Place Picker – Geolocation Sorting & Favorites',
+    subtitle: 'Geolocation, Portals & LocalStorage',
+    description:
+      'Curate a personal list of places: geolocation-based distance sorting (Haversine), pick favorites, and confirm removals via a portal-based modal with an auto-confirm countdown.',
+    tech: [
+      'React',
+      'Hooks',
+      'Portals',
+      'Geolocation API',
+      'LocalStorage',
+      'Vite',
+      'CSS',
+    ],
+    repoUrl:
+      'https://github.com/al-badarin/React-Projects/tree/main/07-place-picker',
+    liveUrl: 'https://place-picker-albadarin.netlify.app/',
+    images: [
+      '/images/place-picker-1.png',
+      '/images/place-picker-2.png',
+      '/images/place-picker-3.png',
+    ],
+    thumb: '/images/place-picker-1.png',
+    highlights: [
+      'Geolocation-based sorting (Haversine)',
+      'Portal modal with native <dialog>',
+      'Auto-confirm delete with progress bar',
+      'Persistent selections via localStorage',
+    ],
+  },
 ];
